@@ -1,2 +1,2 @@
 # ami-coreos
-CoreOS image of AWS
+CoreOS image for AWS
