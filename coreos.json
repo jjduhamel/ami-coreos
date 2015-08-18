@@ -1,0 +1,11 @@
+{
+  "variables": {
+    "aws_secret_key": null,
+    "aws_access_key": null,
+    "timestamp": null,
+  },
+  "builders": {
+  },
+  "provisioners": [
+  ]
+}
