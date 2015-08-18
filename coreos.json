@@ -1,11 +1,25 @@
 {
   "variables": {
-    "aws_secret_key": null,
-    "aws_access_key": null,
-    "timestamp": null,
+    "aws_access_key": "{{env `AWS_ACCESS_KEY`}}",
+    "aws_secret_key": "{{env `AWS_SECRET_KEY`}}"
   },
-  "builders": {
-  },
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "region": "us-east-1",
+      "instance_type": "t1.micro",
+      "source_ami": "ami-3b73d350",
+      "ssh_username": "core",
+      "ami_name": "coreos-{{timestamp}}",
+      "ami_description": "{{timestamp}}",
+      "access_key": "{{user `aws_access_key`}}",
+      "secret_key": "{{user `aws_secret_key`}}"
+    }
+  ],
   "provisioners": [
+    { 
+      "type": "shell",
+      "script": "bootstrap.sh"
+    }
   ]
 }
