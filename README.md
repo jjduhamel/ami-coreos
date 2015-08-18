@@ -4,7 +4,7 @@ CoreOS image for AWS
 ## Building
 
 ```bash
-packer build \
+$ packer build \
   -var "aws_access_key=${AWS_ACCESS_KEY}" \
   -var "aws_access_key=${AWS_ACCESS_KEY}" \
   coreos.json
